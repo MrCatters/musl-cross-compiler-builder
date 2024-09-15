@@ -1,0 +1,9 @@
+#
+# config.mak.arm - sample musl-cross-make configuration
+#
+
+TARGET = arm-linux-musleabi
+OUTPUT = /opt/cross
+COMMON_CONFIG += CFLAGS="-g0 -Os" CXXFLAGS="-g0 -Os" LDFLAGS="-s"
+GCC_CONFIG += --with-arch=armv7 --with-mode=arm --with-fpu=softvfp
+MAKE_OPTS += -j(nproc - 1)
